@@ -1,0 +1,10 @@
+.card {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  &_left {
+
+    border: 1px solid red;
+  }
+
+}

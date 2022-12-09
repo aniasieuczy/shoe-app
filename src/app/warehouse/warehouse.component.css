@@ -1,0 +1,10 @@
+.card {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-evenly;
+}
+.card_left {
+  border: 1px solid red;
+}
+
+/*# sourceMappingURL=warehouse.component.css.map */
