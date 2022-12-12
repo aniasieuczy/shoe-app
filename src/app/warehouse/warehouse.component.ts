@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WarehouseService } from "./warehouse.service";
-import { Warehouse } from "./warehouse.model";
+
 
 @Component({
   selector: 'app-warehouse',
@@ -8,13 +7,11 @@ import { Warehouse } from "./warehouse.model";
   styleUrls: ['./warehouse.component.scss']
 })
 export class WarehouseComponent implements OnInit {
-  warehouses: Warehouse[] = [];
-
-  constructor(private warehouseService: WarehouseService) { }
+ 
+  constructor() { }
 
   ngOnInit(): void {
-    this.warehouses = this.warehouseService.getWarehouses();
-    console.log(this.warehouses);
+   
   }
 
 }

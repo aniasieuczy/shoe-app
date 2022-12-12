@@ -14,5 +14,10 @@ export class WarehouseService {
     return this.warehouses.slice();
   }
 
+  addWarehouse(warehouse: Warehouse){
+    this.warehouses.push(warehouse)
+    console.log(this.warehouses)
+  }
+
 
 }
