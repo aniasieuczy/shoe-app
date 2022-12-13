@@ -27,17 +27,17 @@
         width: 100%;
         border-radius: 20px 20px 0px 0px;
 
-        // &.warehouse {
-        //     background-image: url("../../../src/assets/img/warehouse.png");
-        // }
+        &.warehouse {
+            background-image: url("../../../src/assets/img/inventory.png");
+        }
 
-        // &.stores {
-        //     background-image: url("../../../src/assets/img/store.png");
-        // }
+        &.stores {
+            background-image: url("../../../src/assets/img/002-store.png");
+        }
 
-        // &.items {
-        //     background-image: url("../../../src/assets/img/trolley.png");
-        // }
+        &.items {
+            background-image: url("../../../src/assets/img/001-shopping-cart.png");
+        }
 
     }
 
