@@ -17,9 +17,9 @@ export class NewWarehouseComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const value = form.value
-    const newWarehouse = new Warehouse(value.location, value.address, value.capacity, value.enabled)
+    const newWarehouse = new Warehouse(value.location, value.address, value.capacity, value.enabled, value.id)
     this.warehouseService.addWarehouse(newWarehouse)
-    form.reset
+    form.reset()
   }
 
 }

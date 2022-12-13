@@ -5,7 +5,7 @@
         <form (ngSubmit)="onSubmit(form)" #form="ngForm">
             <div class="form">
                 <div>
-                    <label for="location"> Location </label>
+                    <label for="location"> Location (city) </label>
                     <input 
                     type="text" 
                     id="location" 
@@ -38,7 +38,7 @@
                     >
                 </div>
                 <div>
-                    <label><input type="checkbox" id="enabled" name="enabled" value="enabled" ngModel checked> Enabled </label>   
+                    <label> Enabled <input type="checkbox" id="enabled" name="enabled" value="enabled" ngModel checked>  </label>   
                 </div>
                 <div>
                     <button 

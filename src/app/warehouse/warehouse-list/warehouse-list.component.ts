@@ -16,6 +16,12 @@ export class WarehouseListComponent implements OnInit {
   ngOnInit(): void {
     this.warehouses = this.warehouseService.getWarehouses();
     console.log(this.warehouses);
+    this.warehouseService.warehousesChanged
+    .subscribe(
+      (warehouses: Warehouse[]) =>
+      this.warehouses = warehouses
+    )
+    
   }
 
 }
