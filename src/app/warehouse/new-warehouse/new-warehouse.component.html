@@ -1,4 +1,4 @@
-<p>new-warehouse works!</p>
+<!-- <p>new-warehouse works!</p>
 
 <div class="form-main">
     <p>Add Warehouse</p>
@@ -49,4 +49,53 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div> -->
+    <div class="section">
+        <h3 class="title">Add Warehouse</h3>
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                    <div class="form-group">
+                        <label for="location" class="form-label"> Location (city) </label>
+                        <input
+                        class="form-input" 
+                        type="text" 
+                        id="location" 
+                        name="location"
+                        ngModel
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="form-label"> Address </label>
+                        <input
+                        class="form-input" 
+                        type="text" 
+                        id="address" 
+                        name="address"
+                        ngModel
+                        required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity" class="form-label"> Capacity </label>
+                        <input
+                        class="form-input" 
+                        type="number" 
+                        id="capacity" 
+                        name="capacity"
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"> Enabled <input type="checkbox" class="form-input" id="enabled" name="enabled" value="enabled" ngModel checked></label> 
+                          
+                    </div>
+                    <div>
+                        <button 
+                        class="btn" 
+                        type="submit"
+                        [disabled]="!form.valid"
+                        > Add </button>
+                    </div>
+            </form>
+        </div>

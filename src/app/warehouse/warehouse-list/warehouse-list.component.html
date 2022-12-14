@@ -1,9 +1,17 @@
-<p>warehouse-list works!</p>
+<!--<div class="container">-->
+<!--  <h1 class="header">Warehouse List</h1>-->
+  <div class="wrapper">
+    <div class="section">
+      <h3 class="title">Warehouse List</h3>
 
-<div class="card" *ngFor="let warehouse of warehouses">
-    <div class="card_left">
-      <h3> {{ warehouse.location }}</h3>
-      <p> {{ warehouse.address }} </p>
+      <div class="item"  *ngFor="let warehouse of warehouses">
+        <div class="location">
+          <span class="city"> {{ warehouse.location }}</span>
+          <span class="location"> {{ warehouse.address }} </span>
+        </div>
+        <div class="capacity"> {{ warehouse.capacity }} /1000 </div>
+<!--        <div class="icon"></div>-->
       </div>
-      <div class="card_right"> {{ warehouse.capacity }}</div>
     </div>
+</div>
+<!--</div>-->
