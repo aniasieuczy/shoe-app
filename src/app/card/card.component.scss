@@ -1,0 +1,48 @@
+@use 'src/variables.scss' as v;
+
+.card {
+    background: v.$grey;
+    width: 300px;
+    height: 400px;
+    box-shadow: v.$box-shadow;
+    border-radius: 20px;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        transition: 0.3s;
+        box-shadow: v.$box-shadow-hover;
+    }
+
+    &__img {
+        background: v.$blue;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 200px;
+        height: 300px;
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+
+        &.warehouse {
+            background-image: url("../../../src/assets/img/inventory.png");
+        }
+
+        &.stores {
+            background-image: url("../../../src/assets/img/002-store.png");
+        }
+
+        &.items {
+            background-image: url("../../../src/assets/img/001-shopping-cart.png");
+        }
+
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
