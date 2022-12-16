@@ -1,17 +1,25 @@
 <!--<div class="container">-->
 <!--  <h1 class="header">Warehouse List</h1>-->
-  <div class="wrapper">
-    <div class="section">
-      <h3 class="title">Warehouse List</h3>
+<div class="wrapper">
+  <div class="section">
+    <h3 class="title">Warehouse List</h3>
 
-      <div class="item"  *ngFor="let warehouse of warehouses">
-        <div class="location">
-          <span class="city"> {{ warehouse.location }}</span>
-          <span class="location"> {{ warehouse.address }} </span>
-        </div>
-        <div class="capacity"> {{ warehouse.capacity }} /1000 </div>
-<!--        <div class="icon"></div>-->
+    <div class="item"  *ngFor="let warehouse of warehouses">
+      <div class="location">
+        <p> {{ warehouse.location }}</p>
+        <p> {{ warehouse.address }} </p>
+      </div>
+      <div class="capacity">
+      <p >Cap.: {{ warehouse.capacity }}/1000 </p>
+      </div>
+
+      <div class="icon">
+        <div *ngIf="warehouse.enabled" ><i class="ti-check"></i></div>
+        <div *ngIf="!warehouse.enabled"><i class="ti-close"></i></div>
       </div>
     </div>
+  </div>
 </div>
 <!--</div>-->
+
+
