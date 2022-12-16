@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ti-icons/css/themify-icons.css",
               "src/styles.scss"
             ],
             "scripts": []

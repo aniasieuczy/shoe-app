@@ -1,33 +1,17 @@
-.section {
-  width: 50%;
-  height: 400px;
-  padding: 0 0.2rem;
-}
-.section .title {
-  font-weight: 600;
-  font-size: 2rem;
-  line-height: 3rem;
-}
-.section .item {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  background: #FFFFFF;
-  border: 1px solid #74A3FF;
-  border-radius: 6px;
-}
-.section .item .location {
-  display: flex;
-  flex-wrap: wrap;
-}
-.section .item .location .city {
-  width: 100%;
-}
-.section .item .icon {
-  height: 24px;
-  width: 24px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/variables.scss' as v;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   warehouse-list.component.scss 1:1  root stylesheet */
 
-/*# sourceMappingURL=warehouse-list.component.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/variables.scss' as v;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   warehouse-list.component.scss 1:1  root stylesheet";
+}
