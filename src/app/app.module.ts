@@ -8,6 +8,10 @@ import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-lis
 import { NewWarehouseComponent } from './warehouse/new-warehouse/new-warehouse.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StoresComponent } from './stores/stores.component';
+import { NewStoreComponent } from './stores/new-store/new-store.component';
+import { ShopsListComponent } from './stores/shops-list/shops-list.component';
+import { TooltipComponent } from './shared/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     WarehouseComponent,
     WarehouseListComponent,
     NewWarehouseComponent,
-    DashboardComponent
+    DashboardComponent,
+    StoresComponent,
+    NewStoreComponent,
+    ShopsListComponent,
+    TooltipComponent
   ],
   imports: [
     BrowserModule,
