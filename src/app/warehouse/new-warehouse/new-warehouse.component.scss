@@ -1,3 +1,6 @@
+@use "src/variables.scss" as v;
+
+
 .wrapper {
     display: flex;
     width: 100%;
@@ -5,7 +8,7 @@
 }
 
 .section {
-    width: 50%;
+    // width: 50%;
     height: 30rem;
     padding: 0 2rem;
 
@@ -31,7 +34,7 @@
 
         .form-input {
             background: #FFFFFF;
-            border: 1px solid blue;
+            border: 1px solid v.$blue;
             border-radius: 0.5rem;
             font-size: 0.8rem;
             line-height: 1.5rem;
@@ -40,7 +43,7 @@
     }
 
     .btn {
-        background: blue;
+        background: v.$blue;
         border-radius: 0.5rem;
         font-weight: 600;
         font-size: 0.9rem;

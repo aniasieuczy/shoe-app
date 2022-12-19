@@ -7,6 +7,7 @@ import { WarehouseComponent } from './warehouse/warehouse.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-list.component';
 import { NewWarehouseComponent } from './warehouse/new-warehouse/new-warehouse.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     WarehouseComponent,
     WarehouseListComponent,
-    NewWarehouseComponent
+    NewWarehouseComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
