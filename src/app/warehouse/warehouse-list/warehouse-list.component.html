@@ -10,6 +10,11 @@
           <span class="location"> {{ warehouse.address }} </span>
         </div>
         <div class="capacity"> {{ warehouse.capacity }} /1000 </div>
+
+        <div class="icon">
+          <div *ngIf="warehouse.enabled" ><i class="ti-check"></i></div>
+          <div *ngIf="!warehouse.enabled"><i class="ti-close"></i></div>
+        </div>
 <!--        <div class="icon"></div>-->
       </div>
     </div>
