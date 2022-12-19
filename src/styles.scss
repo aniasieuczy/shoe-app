@@ -3,6 +3,7 @@
 @use 'variables.scss' as v;
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap');
 
+
 * {
     font-family: 'Epilogue', sans-serif;
 }
@@ -11,9 +12,9 @@
     background: v.$light-grey;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+   
 
     .header {
         width: 100%;
@@ -22,5 +23,6 @@
         font-size: 56px;
         line-height: 64px;
         letter-spacing: -1px;
+        margin-top: 4rem;
     }
 }

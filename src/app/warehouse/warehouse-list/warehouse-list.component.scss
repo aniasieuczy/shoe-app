@@ -1,11 +1,52 @@
-.card {
-    display: flex;
-    border: 1px solid black;
-    justify-content: space-evenly;
-    &_left {
-  
-      border: 1px solid red;
-    }
-  
+@use 'src/variables.scss' as v;
+
+.section {
+  // width: 50%;
+  height: 400px;
+  padding:  0 2rem;
+  .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
-  
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background: #FFFFFF;
+    border: 1px solid #74A3FF;
+    border-radius: 6px;
+
+    .location {
+      display: flex;
+      flex-direction: column;
+      p:nth-of-type(1) {
+        //margin-left: 1rem;
+        font-size: 1.1rem;
+      }
+    }
+    .capacity {
+      display:flex;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+    }
+    .icon {
+      color: white;
+      .ti-check {
+        font-size: smaller;
+        background-color: black;
+        border-radius: 20px;
+        padding: 4px;
+      }
+      .ti-close {
+        font-size: smaller;
+        background-color: red;
+        border-radius: 50px;
+        padding: 4px;
+      }
+    }
+  }
+}
+

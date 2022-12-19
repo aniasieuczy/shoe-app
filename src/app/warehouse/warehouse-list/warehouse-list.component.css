@@ -1,10 +1,17 @@
-.card {
-  display: flex;
-  border: 1px solid black;
-  justify-content: space-evenly;
-}
-.card_left {
-  border: 1px solid red;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use 'src/variables.scss' as v;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   warehouse-list.component.scss 1:1  root stylesheet */
 
-/*# sourceMappingURL=warehouse-list.component.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use 'src/variables.scss' as v;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   warehouse-list.component.scss 1:1  root stylesheet";
+}

@@ -1,9 +1,3 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use 'src/variables.scss' as v;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   card.component.scss 1:1  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",

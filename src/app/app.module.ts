@@ -7,14 +7,24 @@ import { WarehouseComponent } from './warehouse/warehouse.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-list.component';
 import { NewWarehouseComponent } from './warehouse/new-warehouse/new-warehouse.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StoresComponent } from './stores/stores.component';
+import { NewStoreComponent } from './stores/new-store/new-store.component';
+import { ShopsListComponent } from './stores/shops-list/shops-list.component';
+import { TooltipComponent } from './shared/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
     WarehouseComponent,
     WarehouseListComponent,
-    NewWarehouseComponent
+    NewWarehouseComponent,
+    DashboardComponent,
+    StoresComponent,
+    NewStoreComponent,
+    ShopsListComponent,
+    TooltipComponent
   ],
   imports: [
     BrowserModule,
