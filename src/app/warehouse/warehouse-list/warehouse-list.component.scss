@@ -12,26 +12,25 @@
   .item {
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
     justify-content: space-between;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     background: #FFFFFF;
     border: 1px solid #74A3FF;
     border-radius: 6px;
+
     .location {
-      //display: flex;
-      //flex-direction: column;
+      display: flex;
+      flex-direction: column;
       p:nth-of-type(1) {
-        margin-left: 1rem;
+        //margin-left: 1rem;
         font-size: 1.1rem;
       }
     }
     .capacity {
       display:flex;
       justify-content: flex-end;
-      p{
-        text-align: end;
-      }
+      flex-wrap: nowrap;
     }
     .icon {
       color: white;

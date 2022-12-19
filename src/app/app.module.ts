@@ -6,7 +6,7 @@ import { CardComponent } from './card/card.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-list.component';
 import { NewWarehouseComponent } from './warehouse/new-warehouse/new-warehouse.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

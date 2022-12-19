@@ -34,8 +34,11 @@
   line-height: 1.5rem;
   color: rgba(57, 20, 0, 0.64);
 }
+.section .form-group .form-input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
 .section .btn {
-  background: blue;
+  background-color: rgb(0, 187, 255);
   border-radius: 0.5rem;
   font-weight: 600;
   font-size: 0.9rem;
@@ -46,6 +49,9 @@
   padding: 1rem 3rem;
   border: none;
   cursor: pointer;
+}
+.section button:disabled {
+  background-color: rgba(0, 187, 255, 0.5);
 }
 
 /*# sourceMappingURL=new-warehouse.component.css.map */

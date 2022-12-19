@@ -21,7 +21,7 @@ export class WarehouseListComponent implements OnInit {
       (warehouses: Warehouse[]) =>
       this.warehouses = warehouses
     )
-    
   }
+
 
 }
