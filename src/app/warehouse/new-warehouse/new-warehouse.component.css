@@ -1,57 +1,17 @@
-.wrapper {
-  display: flex;
-  width: 100%;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @use "src/variables.scss" as v;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   new-warehouse.component.scss 1:1  root stylesheet */
 
-.section {
-  width: 50%;
-  height: 30rem;
-  padding: 0 2rem;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"src/variables.scss\" as v;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   new-warehouse.component.scss 1:1  root stylesheet";
 }
-.section .title {
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 3rem;
-}
-.section .form-group {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-.section .form-group .form-label {
-  font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  text-transform: uppercase;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.section .form-group .form-input {
-  background: #FFFFFF;
-  border: 1px solid blue;
-  border-radius: 0.5rem;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-  color: rgba(57, 20, 0, 0.64);
-}
-.section .form-group .form-input.ng-invalid.ng-touched {
-  border: 1px solid red;
-}
-.section .btn {
-  background-color: rgb(0, 187, 255);
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  line-height: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  padding: 1rem 3rem;
-  border: none;
-  cursor: pointer;
-}
-.section button:disabled {
-  background-color: rgba(0, 187, 255, 0.5);
-}
-
-/*# sourceMappingURL=new-warehouse.component.css.map */

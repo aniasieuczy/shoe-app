@@ -62,7 +62,6 @@ table {
   background: #E6E9F0;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
@@ -73,6 +72,7 @@ table {
   font-size: 56px;
   line-height: 64px;
   letter-spacing: -1px;
+  margin-top: 4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

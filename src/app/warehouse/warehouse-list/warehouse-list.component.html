@@ -1,8 +1,8 @@
 <!--<div class="container">-->
+<!--  <h1 class="header">Warehouse List</h1>-->
 
-<div class="wrapper">
-  <div class="section">
-    <h3 class="title">Warehouse List</h3>
+    <div class="section">
+      <h3 class="title">Warehouse List</h3>
 
     <div class="item"  *ngFor="let warehouse of warehouses">
       <div class="location">
@@ -13,13 +13,14 @@
       <p id="capacityData">Cap.: {{ warehouse.capacity }}/1000 </p>
       </div>
 
-      <div class="icon">
-        <div *ngIf="warehouse.enabled" ><i class="ti-check"></i></div>
-        <div *ngIf="!warehouse.enabled"><i class="ti-close"></i></div>
+        <div class="icon">
+          <div *ngIf="warehouse.enabled" ><i class="ti-check"></i></div>
+          <div *ngIf="!warehouse.enabled"><i class="ti-close"></i></div>
+        </div>
+<!--        <div class="icon"></div>-->
       </div>
     </div>
-  </div>
-</div>
+
 <!--</div>-->
 
 
