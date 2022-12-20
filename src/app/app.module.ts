@@ -6,7 +6,7 @@ import { CardComponent } from './card/card.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-list.component';
 import { NewWarehouseComponent } from './warehouse/new-warehouse/new-warehouse.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StoresComponent } from './stores/stores.component';
 import { NewStoreComponent } from './stores/new-store/new-store.component';
@@ -30,6 +30,7 @@ import { TooltipComponent } from './shared/tooltip/tooltip.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

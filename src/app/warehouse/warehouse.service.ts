@@ -16,6 +16,7 @@ export class WarehouseService {
 
   getWarehouses() {
     return JSON.parse(localStorage.getItem("id") || "[]");
+
   }
 
   addWarehouse(warehouse: Warehouse){
@@ -23,7 +24,7 @@ export class WarehouseService {
       this.warehouses.push(warehouse);
       const jsonData = JSON.stringify(this.warehouses);
       localStorage.setItem("id", jsonData);;
-      this.warehousesChanged.next(this.warehouses.slice()) 
+      this.warehousesChanged.next(this.warehouses.slice())
   }
 
     uploadFromLocalStorage() {
@@ -32,7 +33,7 @@ export class WarehouseService {
       return localStorageData;
   }
 
-  
+
   }
 
 
