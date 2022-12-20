@@ -1,0 +1,58 @@
+@use "src/variables.scss" as v;
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+.section {
+  // width: 50%;
+  height: 30rem;
+  padding: 0 2rem;
+  .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    .form-label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+      text-transform: uppercase;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .form-input {
+      background: #FFFFFF;
+      border: 1px solid v.$blue;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      color: rgba(57, 20, 0, 0.64);
+    }
+    .form-input.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+  }
+  .btn {
+    background: v.$blue;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+  }
+  button:disabled {
+    background-color: rgb(0, 187, 255, 0.5);
+  }
+
+
+}
