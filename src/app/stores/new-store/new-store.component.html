@@ -3,23 +3,25 @@
   <h3 class="title">Add Shop</h3>
   <form [formGroup]="newStoreForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-    <label class="form-label" for="location">Location(city)</label>
+    <label class="form-label" for="location">Location (city)</label>
     <input class="form-input" type="text" id="location" placeholder="Enter location of a store" formControlName="location">
     </div>
     <div class="form-group">
     <label class="form-label" for="address">Address</label>
     <input class="form-input" type="text" id="address" placeholder="Enter address of a store" formControlName="address">
     </div>
-    <div>Brands
-      <label class="form-label">Select all<input type="checkbox" [checked]="allSelected" (change)="checkUncheckAll($event)"></label>
+    <div>
+      <p>Brands</p>
+      <label class="form-label">All<input type="checkbox" formControlName="all" (change)="checkUncheckAll($event)"></label>
       <div *ngFor="let data of Data; let i = index">
         <label>
-          <input type="checkbox" [value]="data.value" [checked]="data.checked" (change)="isAllSelected($event, i)">
+          <input type="checkbox" [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event)">
           {{ data.name }}
         </label>
       </div>
     </div>
-
-    <button class="btn" type="submit">Add</button>
+    <button class="btn" type="submit" [disabled]="!newStoreForm.valid">Add</button>
   </form>
 </div>
+
+

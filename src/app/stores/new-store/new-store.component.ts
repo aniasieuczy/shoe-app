@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormControl, FormGroup} from "@angular/forms";
+import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Store} from "./store.model";
 import {StoreService} from "./store.service";
 
@@ -16,7 +16,6 @@ export interface IBrands {
 export class NewStoreComponent implements OnInit {
   stores: Store [];
   newStoreForm: FormGroup;
-  allSelected = false;
   Data: Array<any> = [
     {name: 'Kazar', value: 'Kazar'},
     {name: 'Gino Rossi', value: 'Gino Rossi'},
@@ -29,12 +28,14 @@ export class NewStoreComponent implements OnInit {
     {name: 'Adidas', value: 'Adidas'}
   ];
 
-  constructor(private storeService: StoreService) { }
+  constructor(private storeService: StoreService) {
+  }
 
   ngOnInit(): void {
     this.newStoreForm = new FormGroup({
-      'location': new FormControl(null),
-      'address': new FormControl(null),
+      'location': new FormControl(null, Validators.required),
+      'address': new FormControl(null, Validators.required),
+      'all': new FormControl(null),
       'brands': new FormArray([])
     })
     this.storeService.storesChanged.subscribe(
@@ -42,37 +43,40 @@ export class NewStoreComponent implements OnInit {
         this.stores = stores;
       }
     )
-
     console.log(this.storeService.getStores());
   }
 
   onSubmit() {
-    const newStore =  new Store(this.newStoreForm.value['location'], this.newStoreForm.value['address'], this.newStoreForm.value['brands']);
+    const newStore = new Store(this.newStoreForm.value['location'], this.newStoreForm.value['address'], this.newStoreForm.value['brands']);
     console.log('new Store ' + newStore.location);
     this.storeService.addStore(newStore);
-    // (this.newStoreForm.get('brands') as FormArray).clear();
+    // this.Data.forEach((check) => check.checked = !check.checked);
+    // this.Data.some((check) => check.checked = !check.checked);
+
     this.newStoreForm.reset();
   }
 
-  checkUncheckAll(evt: any) {
-    this.Data.forEach((check) => check.checked = evt.target.checked)
-  }
-  isAllSelected(evt: any, index: number) {
-    this.Data[index].checked = evt.target.checked;
-    this.allSelected = this.Data.every((item) => item.checked == true);
-    this.onCheckboxChange(evt);
-  }
+  checkUncheckAll(event: any) {
+    this.Data.forEach((check) => check.checked = event.target.checked);
+    const s = this.Data.map(el => el.name);
+    const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
+    brands.push(new FormControl(s));
+    }
 
   onCheckboxChange(event: any) {
     const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
-    if(event.target.checked) {
+    if (event.target.checked) {
       brands.push(new FormControl(event.target.value));
-      // console.log("controls " + event.target.value);
     }
   }
 
-  onSelectAll() {
-    console.log("All was clicked");
-  }
 
 }
+
+
+
+
+
+
+
+
