@@ -1,1 +1,14 @@
-<p>shops-list works!</p>
+<div class="section">
+    <h3 class="title">Shops List</h3>
+
+    <div class="item"  *ngFor="let store of stores">
+        <div class="location">
+            <p> {{ store.location }}</p>
+            <p> {{ store.address }} </p>
+        </div>
+        <div class="brands">
+            <p class="tooltip">  {{ store.brands }} </p>
+            <span *ngIf="store.brands.length >= 3" class="tooltiptext"> {{ store.brands }} </span>
+        </div>
+    </div>
+</div>
