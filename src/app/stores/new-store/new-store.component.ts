@@ -18,14 +18,14 @@ export class NewStoreComponent implements OnInit {
   newStoreForm: FormGroup;
   Data: Array<any> = [
     {name: 'Kazar', value: 'Kazar'},
-    {name: 'Gino Rossi', value: 'Gino Rossi'},
-    {name: 'Ecco', value: 'Ecco'},
-    {name: 'Geox', value: 'Geox'},
-    {name: 'Nike', value: 'Nike'},
-    {name: 'Wojas', value: 'Wojas'},
-    {name: 'Ryłko', value: 'Ryłko'},
-    {name: '4F', value: '4F'},
-    {name: 'Adidas', value: 'Adidas'}
+{name: 'Gino Rossi', value: 'Gino Rossi'},
+{name: 'Ecco', value: 'Ecco'},
+{name: 'Geox', value: 'Geox'},
+{name: 'Nike', value: 'Nike'},
+{name: 'Wojas', value: 'Wojas'},
+{name: 'Ryłko', value: 'Ryłko'},
+{name: '4F', value: '4F'},
+{name: 'Adidas', value: 'Adidas'}
   ];
 
   constructor(private storeService: StoreService) {
@@ -49,6 +49,8 @@ export class NewStoreComponent implements OnInit {
   onSubmit() {
     const newStore = new Store(this.newStoreForm.value['location'], this.newStoreForm.value['address'], this.newStoreForm.value['brands']);
     console.log('new Store ' + newStore.location);
+    console.log(newStore.brands);
+
     this.storeService.addStore(newStore);
     // this.Data.forEach((check) => check.checked = !check.checked);
     // this.Data.some((check) => check.checked = !check.checked);
@@ -63,10 +65,16 @@ export class NewStoreComponent implements OnInit {
     brands.push(new FormControl(s));
     }
 
-  onCheckboxChange(event: any) {
+  onCheckboxChange(event: any, i: number) {
     const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
+    console.log(brands.at(i));
     if (event.target.checked) {
+      console.log('checked', i)
       brands.push(new FormControl(event.target.value));
+    } else {
+      console.log('unchecked', i)
+      brands.removeAt(i);
+
     }
   }
 

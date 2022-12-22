@@ -15,7 +15,7 @@
       <label class="form-label">All<input type="checkbox" formControlName="all" (change)="checkUncheckAll($event)"></label>
       <div *ngFor="let data of Data; let i = index">
         <label>
-          <input type="checkbox" [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event)">
+          <input type="checkbox"  [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event, i)">
           {{ data.name }}
         </label>
       </div>
