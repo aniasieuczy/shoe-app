@@ -10,18 +10,30 @@
     <label class="form-label" for="address">Address</label>
     <input class="form-input" type="text" id="address" placeholder="Enter address of a store" formControlName="address">
     </div>
-    <div>
-      <p>Brands</p>
-      <label class="form-label">All<input type="checkbox" formControlName="all" (change)="checkUncheckAll($event)"></label>
-      <div *ngFor="let data of Data; let i = index">
-        <label>
-          <input type="checkbox" [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event)">
-          {{ data.name }}
-        </label>
-      </div>
+<!--    <div>-->
+<!--      <p>Brands</p>-->
+<!--      <label class="form-label">All<input type="checkbox" formControlName="all" (change)="checkUncheckAll($event)"></label>-->
+<!--      <div *ngFor="let data of Data; let i = index">-->
+<!--        <label>-->
+<!--          <input type="checkbox" formControlName="brands" [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event)">-->
+<!--          {{ data.name }}-->
+<!--        </label>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+    <input type="checkbox" (click)="onSelectAll()">All
+
+    <div formArrayName="brands">Brands
+      <span *ngFor="let brand of brands.controls; let i = index">
+      <input  type="checkbox" [value]="brand.value" [checked]="false"  [formControlName]="i" (change)="onCheckboxChange($event, i)">
+       {{ brand.value }}
+        </span>
     </div>
+
     <button class="btn" type="submit" [disabled]="!newStoreForm.valid">Add</button>
   </form>
 </div>
+
 
 
