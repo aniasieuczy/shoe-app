@@ -3,11 +3,6 @@ import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "
 import {Store} from "./store.model";
 import {StoreService} from "./store.service";
 
-export interface IBrands {
-  value: string;
-  checked: boolean;
-}
-
 @Component({
   selector: 'app-new-store',
   templateUrl: 'new-store.component.html',
@@ -28,16 +23,35 @@ export class NewStoreComponent implements OnInit {
     {name: 'Adidas', value: 'Adidas'}
   ];
 
-  constructor(private storeService: StoreService) {
-  }
+  constructor(private storeService: StoreService,
+              private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.newStoreForm = new FormGroup({
-      'location': new FormControl(null, Validators.required),
-      'address': new FormControl(null, Validators.required),
-      'all': new FormControl(null),
-      'brands': new FormArray([])
-    })
+    // this.newStoreForm = new FormGroup({
+    //   'location': new FormControl(null, Validators.required),
+    //   'address': new FormControl(null, Validators.required),
+    //   'all': new FormControl(null),
+    //   'brands': new FormArray([
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl(''),
+    //     new FormControl('')
+    //   ])
+    // })
+    // this.brands.setValue(['Kazar', 'Gino Rossi', 'Ecco', 'Geox', 'Nike', 'Wojas','Ryłko', '4F', 'Adidas']);
+
+    this.newStoreForm = this.fb.group({
+      location: [null],
+      address: [null],
+      all:[null],
+      brands: this.addBrandControls()
+      })
+
     this.storeService.storesChanged.subscribe(
       (stores: Store[]) => {
         this.stores = stores;
@@ -46,27 +60,33 @@ export class NewStoreComponent implements OnInit {
     console.log(this.storeService.getStores());
   }
 
+  get brands() {
+    return this.newStoreForm.get('brands') as FormArray;
+  }
+
+  addBrandControls () {
+    const arr = this.Data.map(element => {
+      return this.fb.control(false)
+    })
+  return this.fb.array(arr);
+  }
+
   onSubmit() {
     const newStore = new Store(this.newStoreForm.value['location'], this.newStoreForm.value['address'], this.newStoreForm.value['brands']);
     console.log('new Store ' + newStore.location);
     console.log(newStore.brands);
-
-    console.log('new Store ' + this.brands.value);
     console.log(this.newStoreForm.get('brands')?.value);
 
-    this.newStoreForm.value['brands']
-    // .map((checked) => checked ? this.Data.values() : null)
-    // .filter((value) => value !== null);
     this.storeService.addStore(newStore);
     this.newStoreForm.reset();
   }
 
   checkUncheckAll(event: any) {
-    this.Data.forEach((check) => check.checked = event.target.checked);
-    const s = this.Data.map(el => el.name);
-    const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
-    brands.push(new FormControl(s));
-    }
+    // this.Data.forEach((check) => check.checked = event.target.checked);
+    // const s = this.Data.map(el => el.name);
+    // const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
+    // brands.push(new FormControl(s));
+  }
 
   onCheckboxChange(event: any, i: number) {
     const brands: FormArray = this.newStoreForm.get('brands') as FormArray;
@@ -74,30 +94,43 @@ export class NewStoreComponent implements OnInit {
     if (event.target.checked) {
       console.log('checked', i)
       brands.push(new FormControl(event.target.value));
-    } else {
+    } else if (event.target == null) {
       console.log('unchecked', i)
-      brands.removeAt(i);
-
+      // brands.removeAt(i);
+        brands.controls.forEach(item => {
+          if(item.value == event.target.value) {
+            brands.removeAt(i);
+            return;
+          }
+          i++;
+        })
     }
-    // this.brands.controls.forEach(control => control.value)
-    //   .map((checked) => checked.checked ? checked.value : null)
-    //   .filter(value => value !== null);
-
-    // if (event.target.checked) {
-    //  this.brands.patchValue(event.target.value);
-    // }
+    console.log(brands);
 
 
+    // const newControls = this.brands.controls.forEach(control => {
+    //   control.value
+    //     .map((value) => value.checked ? value.value : null)
+    //     .filter(value => value !== null);
+    // })
 
   }
 
   onSelectAll() {
     // if (this.brands.controls.some(control => control.value)) {
-      // this.brands.controls.forEach(control => control.patchValue(this.brands.value));
+    // this.brands.controls.forEach(control => control.patchValue(this.brands.value));
     // } else {
-      // this.brands.controls.forEach(control => control.patchValue(this.brands.value));
-  //   }
-  // }
+    // this.brands.controls.forEach(control => control.patchValue(this.brands.value));
+    //   }
+    // }
+  }
+
+
+
+
+
+
+
 
 
 }

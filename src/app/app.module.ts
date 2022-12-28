@@ -12,6 +12,10 @@ import { StoresComponent } from './stores/stores.component';
 import { NewStoreComponent } from './stores/new-store/new-store.component';
 import { ShopsListComponent } from './stores/shops-list/shops-list.component';
 import { TooltipComponent } from './shared/tooltip/tooltip.component';
+import { MaterialCheckboxesComponent } from './material-checkboxes/material-checkboxes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -24,13 +28,18 @@ import { TooltipComponent } from './shared/tooltip/tooltip.component';
     StoresComponent,
     NewStoreComponent,
     ShopsListComponent,
-    TooltipComponent
+    TooltipComponent,
+    MaterialCheckboxesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

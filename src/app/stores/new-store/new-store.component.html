@@ -10,18 +10,27 @@
     <label class="form-label" for="address">Address</label>
     <input class="form-input" type="text" id="address" placeholder="Enter address of a store" formControlName="address">
     </div>
+
     <div>
       <p>Brands</p>
       <label class="form-label">All<input type="checkbox" formControlName="all" (change)="checkUncheckAll($event)"></label>
-      <div *ngFor="let data of Data; let i = index">
-        <label>
-          <input type="checkbox" [value]="data.value" [checked]="data.checked" (change)="onCheckboxChange($event, i)">
-          {{ data.name }}
-        </label>
+
+      <div formArrayName="brands">
+          <span *ngFor="let brand of brands.controls; let i = index">
+          <input type="checkbox" [formControl]="$any(brand)" id="i" [value]="Data[i].value" (change)="onCheckboxChange($event, i)">
+<!--          {{ Data[i].value }}-->
+          <label for="i"> {{ Data[i].name }}</label>
+            </span>
       </div>
+
+
+
     </div>
     <button class="btn" type="submit" [disabled]="!newStoreForm.valid">Add</button>
   </form>
 </div>
+
+
+
 
 

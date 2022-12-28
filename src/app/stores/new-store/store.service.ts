@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { IBrands } from "./new-store.component";
 import {Store} from "./store.model";
 import {BehaviorSubject, Subject} from "rxjs";
 

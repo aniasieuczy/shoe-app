@@ -2,7 +2,7 @@
 @use 'reset.scss' as r;
 @use 'variables.scss' as v;
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap');
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 * {
     font-family: 'Epilogue', sans-serif;
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-   
+
 
     .header {
         width: 100%;
@@ -26,3 +26,6 @@
         margin-top: 4rem;
     }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
